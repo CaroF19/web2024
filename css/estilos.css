@@ -1,0 +1,119 @@
+@keyframes loco{
+     0%{background: blue; transform: rotate(10deg) scale(1,1);}
+     20%{background:red ; transform: rotate(-10deg) scale(1.5,1.5);}
+     40%{background: yellow; transform: rotate(10deg) scale(1,1);}
+     60%{background: silver; transform: rotate(-10deg) scale(1.5,1.5);}
+     80%{background: fuchsia; transform: rotate(20deg) scale(1,1);}
+     90%{background: darkgreen; transform: rotate(-10deg) scale(2,2);}
+     10%{background: gold; transform: rotate(10deg) scale(1,);}
+}
+.contenedor{
+    align-items: center;
+    border: solid 0.1em;
+    display: flex;
+    height: 500px;
+    justify-content: space-around;
+}
+.contenedor div{
+    border: solid 0.1em;
+    filter: invert(1);
+    height: 400px;
+    width: 20%;
+    transition: all linear 0.7s;
+}
+.contenedor div:hover{
+    background-size: 100% 100%;
+    filter: invert(0);
+}
+.cupon{
+    display: none;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
+}
+.hija1{
+    background: url(../css/Bart.jpeg);
+    background-size: cover;
+}
+.hija2{
+    background: url(../css/Homero.jpeg);
+    background-size: cover;
+}
+.hija3{
+    background: url(../css/Lisa.jpeg);
+    background-size: cover;
+}
+.hija4{
+    background: url(../css/Marge.jpeg);
+    background-size: cover;
+}
+.imprimir{
+    background: lightgray url(Printer.png) no-repeat 20px 0.2px;
+    background-size: 37px 37px;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    display: block;
+    font-style: italic;
+    font-size: ;
+    margin: 1em auto;
+    padding: 0.4em;
+    width: 50%;
+}
+.imprimir:hover{
+    background: lightblue url(../css/Pink\ printer.png) no-repeat 20px 5px;
+    background-size: 35px 35px;
+    font-size: larger;
+    cursor: pointer;
+}
+@media print{
+    .hija1, .hija3{
+        display: none;
+    }
+.contenedor{
+    background-color: rgb(70, 131, 183);
+    flex-direction: column;
+}
+.contenedor div{
+    filter: none;
+    width: 50%;
+    background-size: 100% 100%;
+}
+.cupon{
+    display: block;
+}
+.imprimir{
+    display: none;
+}
+}
+@media screen and (orientation:landscape){
+    body{
+        background: rgb(239, 217, 15);
+    }
+}
+
+@media screen and (orientation:portrait){
+   body{
+        background: lightblue;
+   } 
+}
+@media  screen and (max-width:700px) {
+    .contenedor{
+        flex-direction: column;  
+        height: auto;
+}
+.contenedor div{
+    filter: invert(0);
+    height: 400px;
+    margin-top: 1em;
+    width: 100%;
+}
+.contenedor div:hover{
+    background-repeat: no-repeat;
+    background-size: none;
+    filter: invert(0);
+}
+.hija1{
+    animation: loco alternate infinite 1s;
+}
+}
